@@ -10,8 +10,11 @@ int main()
             break;
         int day = 0;
         double climb = 0;
+        f = u * f / 100;
         while (true)
         {
+
+            // cout << climb << " ";
             day++;
             climb += u;
             if (climb > h)
@@ -19,16 +22,18 @@ int main()
                 cout << "success on day " << day << endl;
                 break;
             }
-
+            // cout << u << " " << climb << " ";
             climb -= d;
+            // cout << climb << " " << endl;
             if (climb < 0)
             {
                 cout << "failure on day " << day << endl;
                 break;
             }
 
-            u = u * (100 - f) / 100;
-            if (u < 0)
+            if (u > f)
+                u -= f;
+            else
                 u = 0;
         }
     }
