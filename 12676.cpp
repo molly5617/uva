@@ -23,6 +23,8 @@ int main()
             for (int i = maxd; i > 0; i--)
             {
                 for (int j = 0; j < deep[i].size(); j++)
+                {
+                                }
             }
         }
     }

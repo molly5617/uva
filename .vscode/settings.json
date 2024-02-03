@@ -12,6 +12,9 @@
         "vector": "cpp",
         "xhash": "cpp",
         "xstring": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "utility": "cpp"
     }
 }

@@ -19,6 +19,20 @@ int main()
                 cin >> v[i][k];
             }
         }
+
+        for (int k = 0; k < j; k++)
+        {
+            int temp = 0;
+            for (int i = 0; i < r; i++)
+            {
+                temp += v[i][k];
+            }
+            if (temp >= score)
+            {
+                score = temp;
+                ans = k + 1;
+            }
+        }
         cout << ans << endl;
     }
 }
