@@ -1,40 +1,36 @@
 #include <iostream>
 using namespace std;
-long long int findGCD(long long int a, long long int b)
-{
-
-    while (b != 0)
-    {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
+#include <vector>
 int main()
 {
-    long long int n, m;
-    while (cin >> n >> m)
+    int n;
+    cin >> n;
+    while (n--)
     {
-        long long ans = 1;
-        long long int up = 1, down = 1;
-        long long int save = 1;
-        if (n == 0 && m == 0)
+        int k, w;
+        cin >> k;
+        cin >> w;
+        vector<string> v;
+        for (int i = 0; i < w; i++)
         {
-            break;
+            string a;
+            cin >> a;
+
+            v.push_back(a);
         }
-        for (int i = n, j = m; j > 0; i--, j--)
+        int ans = k;
+        for (int i = 1; i < w; i++)
         {
-            ans *= i;
-            down *= j;
-            long long int gcd = findGCD(ans, down);
-            ans = ans / gcd;
-            // cout << "ans: " << ans << endl;
-            down /= gcd;
-
-            // cout << i << " " << j << endl;
+            int j = 0;
+            for (int s = 0; s < k; s++)
+            {
+                if (v[i - 1][s] == v[i][j])
+                {
+                    j++;
+                }
+            }
+            ans += k - j;
         }
-
-        cout << n << " things taken " << m << " at a time is " << ans << " exactly." << endl;
+        cout << ans << endl;
     }
 }
