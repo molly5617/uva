@@ -6,22 +6,28 @@ int main()
 {
     string key = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
     string line;
-    while (getline(cin, line))
+    int n;
+    cin >> n;
+    while (n--)
     {
-        for (int i = 0; i < line.length(); i++)
+        cin.ignore();
+        while (getline(cin, line))
         {
-            if (line[i] == ' ')
-                cout << " ";
-            else
-                for (int j = 0; j < key.length(); j++)
-                {
-                    if (key[j] == tolower(line[i]))
+            for (int i = 0; i < line.length(); i++)
+            {
+                if (line[i] == ' ')
+                    cout << " ";
+                else
+                    for (int j = 0; j < key.length(); j++)
                     {
-                        cout << key[j - 2];
-                        break;
+                        if (key[j] == tolower(line[i]))
+                        {
+                            cout << key[j - 2];
+                            break;
+                        }
                     }
-                }
+            }
+            cout << endl;
         }
-        cout << endl;
     }
 }

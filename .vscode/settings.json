@@ -13,11 +13,17 @@
         "xhash": "cpp",
         "xstring": "cpp",
         "xtree": "cpp",
+<<<<<<< HEAD
         "initializer_list": "cpp",
         "queue": "cpp",
         "regex": "cpp",
         "stack": "cpp",
         "type_traits": "cpp",
         "xutility": "cpp"
+=======
+        "stack": "cpp",
+        "string": "cpp",
+        "utility": "cpp"
+>>>>>>> e791acea9dedabead4a5de7be7bd47c3c81f797f
     }
 }

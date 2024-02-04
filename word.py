@@ -1,13 +1,5 @@
 #include <iostream>
 using namespace std;
-<<<<<<< HEAD
-#include <string>
-int main()
-{
-    string name = "0123456789";
-    cout << name.substr(2, 3);
-}
-=======
 #include <vector>
 #include <set>
 #include <map>
@@ -27,12 +19,12 @@ int main()
     {
         long long int num = 0;
         long long int now = i;
-        if (now % 5 == 0)
+        while (now % 5 == 0)
         {
-            dp[i] = dp[i - 1] + 1;
+            num++;
+            now /= 5;
         }
-        else
-            dp[i] = dp[i - 1];
+        dp[i] = dp[i - 1] + num;
     }
 
     while (cin >> low >> high && low)
@@ -45,37 +37,32 @@ int main()
             {
                 long long int num = 0;
                 long long int now = i;
-                if (now % 5 == 0)
+                while (now % 5 == 0)
                 {
-                    dp[i] = dp[i - 1] + 1;
+                    num++;
+                    now /= 5;
                 }
-                else
-                    dp[i] = dp[i - 1];
+                dp[i] = dp[i - 1] + num;
             }
-            pre = high;
         }
-
-        long long int temp = 0;
-        ans.insert(temp);
+        pre = high;
         for (long long int i = low; i <= high; i++)
         {
             if (dp[i] != 0)
                 ans.insert(dp[i]);
             else
             {
+                long long int num = 0;
                 long long int now = i;
-
-                if (now % 5 == 0)
+                while (now % 5 == 0)
                 {
-                    dp[i] = dp[i - 1] + 1;
+                    num++;
+                    now /= 5;
                 }
-                else
-                    dp[i] = dp[i - 1];
+                dp[i] = dp[i - 1] + num;
                 ans.insert(dp[i]);
             }
         }
-
         cout << ans.size() << endl;
     }
 }
->>>>>>> e791acea9dedabead4a5de7be7bd47c3c81f797f
