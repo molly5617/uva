@@ -1,36 +1,38 @@
 #include <iostream>
+#include <string>
 using namespace std;
-#include <vector>
+#include <map>
 int main()
 {
-    int n;
-    cin >> n;
-    while (n--)
+    int a, b;
+    while (cin >> a >> b && a)
     {
-        int k, w;
-        cin >> k;
-        cin >> w;
-        vector<string> v;
-        for (int i = 0; i < w; i++)
+        string line;
+        map<char, int> mp;
+        if (a > b)
         {
-            string a;
-            cin >> a;
-
-            v.push_back(a);
+            int temp = a;
+            a = b;
+            b = temp;
         }
-        int ans = k;
-        for (int i = 1; i < w; i++)
+        for (int i = a; i <= b; i++)
         {
-            int j = 0;
-            for (int s = 0; s < k; s++)
+            line = to_string(i);
+            for (int i = 0; i < line.length(); i++)
             {
-                if (v[i - 1][s] == v[i][j])
-                {
-                    j++;
-                }
+                mp[line[i]]++;
             }
-            ans += k - j;
         }
-        cout << ans << endl;
+
+        for (char c = '0'; c <= '9'; c++)
+        {
+            if (c != '0')
+            {
+                cout << " " << mp[c];
+            }
+            else
+                cout << mp[c];
+        }
+        cout << endl;
     }
 }
