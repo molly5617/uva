@@ -1,5 +1,13 @@
 #include <iostream>
 using namespace std;
+<<<<<<< HEAD
+#include <string>
+int main()
+{
+    string name = "0123456789";
+    cout << name.substr(2, 3);
+}
+=======
 #include <vector>
 #include <set>
 #include <map>
@@ -70,3 +78,4 @@ int main()
         cout << ans.size() << endl;
     }
 }
+>>>>>>> e791acea9dedabead4a5de7be7bd47c3c81f797f

@@ -5,28 +5,32 @@ using namespace std;
 int main()
 {
     int a, b;
-    while (cin >> a >> b && a)
+    while (cin >> a >> b)
     {
         string line;
-        map<char, int> mp;
+        map<int, int> mp;
         if (a > b)
         {
             int temp = a;
             a = b;
             b = temp;
         }
-        for (int i = a; i <= b; i++)
+        while (a % 10 != 0)
         {
-            line = to_string(i);
-            for (int i = 0; i < line.length(); i++)
-            {
-                mp[line[i]]++;
-            }
+            mp[a % 10]++;
+            a++;
+        }
+        while (b % 10 != 0)
+        {
+            mp[b % 10]++;
+            b++;
         }
 
-        for (char c = '0'; c <= '9'; c++)
+        
+
+        for (int c = 0; c <=9; c++)
         {
-            if (c != '0')
+            if (c != 0)
             {
                 cout << " " << mp[c];
             }
